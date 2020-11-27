@@ -1,0 +1,218 @@
+<div class="container p-4">
+    <h3>Por favor, ingrese sus datos.</h3>
+    <br>
+    <form action="/registro" method="POST">
+
+        {{!-- Informacion sobre el usuario y contraseña --}}
+        <div class="card">
+            <div class="card-header">Usuario y contraseña</div>
+            <div class="card-body">
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="email">Correo institucional</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@unison.mx"
+                            required>
+                        <small id="emailHelp" class="form-text text-muted">
+                            El que le proporciona la Universidad de Sonora.
+                        </small>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="alt_email">Correo alternativo</label>
+                        <input type="email" class="form-control" id="alt_email" name="alt_email" placeholder="micorreo@gmail.com"
+                            required>
+                        <small id="emailAltHelp" class="form-text text-muted">
+                            Algún correo de uso personal.
+                        </small>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Ejemplo: suContraseña194*" required>
+                        <small id="passwordHelp" class="form-text text-muted">
+                            NOTA: No es obligatorio utilizar la institucional.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+
+        {{!-- Información personal --}}
+        <div class="card">
+            <div class="card-header">Información personal</div>
+            <div class="card-body">
+
+                {{!-- Nombre --}}
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="nombre">Nombre o nombres</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                        <small id="emailHelp" class="form-text text-muted">
+                            Sus datos no serán utilizados por terceros.
+                        </small>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="paterno">Apellido paterno</label>
+                        <input type="text" class="form-control" id="paterno" name="paterno" placeholder="Apellido paterno">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="materno">Apellido materno</label>
+                        <input type="text" class="form-control" id="materno" name="materno" placeholder="Apellido materno">
+                    </div>
+                </div>
+                {{!-- Fecha de nacimiento --}}
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="a_nacimiento">Año de nacimiento</label>
+                        <input type="text" class="form-control" id="a_nacimiento" name="a_nacimiento" placeholder="Ejemplo: 1990" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="m_nacimiento">Mes de nacimiento</label>
+                        <input type="text" class="form-control" id="m_nacimiento" name="m_nacimiento" placeholder="Ejemplo: 02 si nació en febrero.">
+                        <small id="mesHelp" class="form-text text-muted">
+                            Ingrese el número del mes.
+                        </small>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="d_nacimiento">Dia de nacimiento</label>
+                        <input type="text" class="form-control" id="d_nacimiento" name="d_nacimiento" placeholder="Ejemplo: 06">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="telefono">Número de telefono personal</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo: 6629228364" required>
+                    </div>
+                </div>
+
+                {{!-- Genero --}}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="fem" value="F" checked>
+                    <label class="form-check-label" for="fem">Femenino</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="masc" value="M">
+                    <label class="form-check-label" for="masc">Masculino</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="otro" value="O">
+                    <label class="form-check-label" for="otro">Otro</label>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        {{!-- Campos adicionales --}}
+        <div class="card">
+            <div class="card-header">Padecimientos</div>
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="enf_ta">
+                        Mencione algún padecimiento que pudieramos considerar
+                    </label>
+                    <textarea class="form-control" id="enf_ta" name="enf_ta" rows="3" 
+                    placeholder="Ejemplo: diabetes, hipertensión, etc."></textarea>
+                </div>
+
+            </div>
+        </div>
+        {{!-- <br> --}}
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="terminos">
+            <label class="form-check-label" for="terminos">
+                Acepto los <a href="/terminos">Términos y condiciones.</a>
+            </label>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-primary">Terminar registro</button>
+    </form>
+
+</div>
+
+{{!-- <div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>SignUp</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="fullname" placeholder="Full Name" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="username" placeholder="Username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                SignUp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+{{!-- <link rel="stylesheet" href="/css/registro.css"> --}}
+
+{{!-- <main class="campos-registro">
+    <form action="" autocomplete="off" class="form_registro">
+
+        <fieldset>
+            <legend>Correo y contraseña</legend>
+
+            <label for="input_correoi">Correo Institucional:</label><br>
+            <input type="email" id="input_correoi" name="input_correoi" placeholder="Correo de la universidad"><br>
+            
+            <label for="input_correoalt">Correo electrónico alternativo:</label><br>
+            <input type="email" id="input_correoalt" name="input_correoalt" placeholder="Algún correo personal"><br>
+            
+            <label for="input_pass">Contraseña:</label><br>
+            <input type="password" id="input_passr" name="input_pass"><br>
+            
+            <label for="input_pass2">Repita su contraseña:</label><br>
+            <input type="password" id="input_pass2" name="input_pass2"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos personales</legend>
+            
+            <label for="input_apellidop" autocapitalize="characters">Apellido paterno:</label><br>
+            <input type="text" id="input_apellidop" name="input_apellidop" required><br>
+            
+            <label for="input_apellidom" autocapitalize="characters">Apellido materno:</label><br>
+            <input type="text" id="input_apellidom" name="input_apellidom" required><br>
+
+            <label for="input_nombre" autocapitalize="characters">Nombre(s):</label><br>
+            <input type="text" id="input_nombre" name="input_nombre" required><br>
+            
+            <label for="input_fechan">Fecha de nacimiento:</label><br>
+            <input type="date" id="input_fechan" name="input_fechan" required><br>
+
+            <label for="input_sexo">Seleccione su sexo:</label><br>
+            <input type="radio" id="masculino" name="input_sexo" value="masculino" required>
+            <label for="masculino">Masculino</label><br>
+            <input type="radio" id="femenino" name="input_sexo" value="masculino" required>
+            <label for="femenino">Femenino</label><br>
+            <input type="radio" id="otro" name="input_sexo" value="otro" required>
+            <label for="otro">Otro</label><br>
+
+            <label for="input_telefono">Número de telefono:</label><br>
+            <input type="tel" id="input_telefono" name="input_telefono" required>
+        </fieldset>
+
+        <input type="submit" value="Enviar y registrarse">
+    </form>
+</main> --}}

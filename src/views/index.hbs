@@ -1,0 +1,38 @@
+<header>
+    <div class="contenedor-leyenda-logo">
+        <a href="https://www.unison.mx/">
+        <img src="img/logo_unison_110.png" alt="logo unison">
+        </a>
+        <div class="contenedor-leyenda">
+            <span class="titulo">Portal de solicitud de Laboratorios</span>
+            <br>
+            <span class="leyenda-universidad">Universidad de Sonora</span>
+        </div>
+    </div>
+</header>
+
+<div class="slide-wrap">
+    <ul class="slider">
+        <li><img src="https://picsum.photos/id/1/1800/490" alt=""></li>
+        <li><img src="https://picsum.photos/id/2/1800/490" alt=""></li>
+        <li><img src="https://picsum.photos/id/3/1800/490" alt=""></li>
+        <li><img src="https://picsum.photos/id/4/1800/490" alt=""></li>
+    </ul>
+</div>
+
+<!-- Script del slider de imagenes -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.slider').bxSlider({
+            mode: 'fade',
+            auto: 'true',
+            pause: 2000,
+            speed: 1000,
+            autoHover: true
+        })
+    })
+</script>
