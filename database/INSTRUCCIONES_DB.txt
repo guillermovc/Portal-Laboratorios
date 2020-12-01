@@ -1,0 +1,12 @@
+Instrucciones para crear la base de datos
+
+1.- Viajar hasta la ruta xampp/mysql/bin  (xampp suele estar en C:)
+2.- escribir lo siguiente: mysql -u root -p  (DAR ENTER)
+3.- Te pedirá contraseña, solo presiona enter (POR DEFECTO NO TIENE, A MENOS QUE HAYAS PUESTO UNA)
+4.- Ejecutar las instrucciones del archivo db.sql
+
+Comandos útiles:
+Mostrar bases de datos: show databases;
+"Entrar" a una base de datos: use nombre_de_la_base;
+Mostrar tablas de una db: show tables;
+Mostrar información extra de una tabla: describe nombre_tabla;

@@ -2,24 +2,32 @@
 
 <style>
   .contenedor {
-    width: 100% !important;
-    background-color: orange !important;
-
+    width: 100%;
+    background-color: orange;
   }
 
   .navbar {
-    padding-left: 30%;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-left: 15%;
+    padding-top: 0 ;
+    padding-bottom: 0 ;
   }
 
   .navbar li {
     border-right: 1px solid white;
   }
+  
+  .navbar li.primero {
+    border-left: 1px solid white;
+  }
 
-  .navbar a {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500 !important ;
+  .navbar li.ultimo {
+    border-right: 1px solid white;
+  }
+
+  .navbar li a {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 100% !important;
   }
   
   .navbar li:hover {
@@ -36,13 +44,28 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
+          {{#if user}}
+          <li class="nav-item active primero">
+            <a class="nav-link text-white" href="/logout">CERRAR SESIÓN<span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link text-white" href="#">SERVICIOS<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" href="/profile">PERFIL<span class="sr-only">(current)</span></a>
+          </li>
+          {{else}}
+          <li class="nav-item active primero">
+            <a class="nav-link text-white" href="/signin">INICIAR SESIÓN<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="/registro">REGISTRO<span class="sr-only">(current)</span></a>
+          </li>
+          {{/if}}
+          <li class="nav-item">
+            <a class="nav-link text-white" href="https://alumnos.unison.mx/" target="_blank">PORTAL DE ALUMNOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">PORTAL DE ALUCNOS</a>
+            <a class="nav-link text-white" href="#">SERVICIOS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ultimo">
             <a class="nav-link text-white" href="#">BIBLIOTECAS</a>
           </li>
         </ul>

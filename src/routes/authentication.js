@@ -22,7 +22,7 @@ router.get('/signin', isNotLoggedIn,(req, res) => {
 
 router.post('/signin', isNotLoggedIn, (req, res, next) => {
     passport.authenticate('local.signin', {
-        successRedirect: '/profile',
+        successRedirect: '/principal',
         failureRedirect: '/signin',
         failureFlash: true
     })(req, res, next);
@@ -30,6 +30,10 @@ router.post('/signin', isNotLoggedIn, (req, res, next) => {
 
 router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile');
+});
+
+router.get('/principal', isLoggedIn, (req, res) => {
+    res.render('principal', {title: 'Portal de Laboratorios - Página Principal',header: 'Página principal'});
 });
 
 router.get('/logout', isLoggedIn, (req, res) => {
