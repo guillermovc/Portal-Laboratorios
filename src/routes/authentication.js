@@ -11,7 +11,7 @@ router.get('/registro', isNotLoggedIn, (req, res) => {
 
 // Ruta para recibir el formulario que envia la vista
 router.post('/registro', isNotLoggedIn, passport.authenticate('local-signup', {
-    successRedirect: '/profile',
+    successRedirect: '/principal',
     failureRedirect: '/registro',
     failureFlash: true
 }));
