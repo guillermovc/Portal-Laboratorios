@@ -47,9 +47,15 @@
 
 <div class="superior">
     <div class="contenedor-logo-leyenda">
+        {{#if user}}
+        <a href="/principal" class="nav-img">
+            <img src="img/logo_unison_buho_con_leyenda.png" alt="logo unison buho" title="logo unison buho">
+        </a>
+        {{else}}
         <a href="/" class="nav-img">
             <img src="img/logo_unison_buho_con_leyenda.png" alt="logo unison buho" title="logo unison buho">
         </a>
+        {{/if}}
         {{#if header}}
         <span>{{ header }}</span>
         {{else}}
