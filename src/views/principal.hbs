@@ -1,4 +1,175 @@
+	<head>
+		<title>Menu Desplegable</title>
+		<style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header {
+				margin:auto;
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:rgb(0, 70, 144);
+				color:rgb(255, 255, 255);
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:#a8a8a8;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+		</style>
+	</head>
 <div class="container">
-    <h1>Página principal una vez logeado</h1>
-    <p>(PARTE DE JUAN Y HUGO)</p>
+    <h1>Seleccion del Laboratorio.</h1>
+    <p>Eliga el laboratorio que quiere utlizar en un hora disponible</p>
+    <br>
+    <br>
+        
+		<div id="header">
+			<ul class="nav">
+
+				<li><a href="">Laboratorios</a>
+					<ul>
+						<li><a href="">Laboratorio 1</a></li>
+						<li><a href="">Laboratorio 2</a></li>
+						<li><a href="">Laboratorio 3</a></li>
+						<li><a href="">Laboratorio 4</a>
+						</li>
+					</ul>
+				</li>
+
+				<li><a href="" >Selecciona Dia</a>
+					<ul>
+						<li><a href="">Lunes</a></li>
+						<li><a href="">Martes</a></li>
+						<li><a href="">Miercoles</a></li>
+						<li><a href="">Jueves</a></li>
+						<li><a href="">Viernes</a></li>
+					</ul>
+				</li>
+
+			</ul>
+    <br>
+    <br>
+    <br>
+   <table id="tableData" class="table table-fixed">
+    <thead>
+    <tr>
+        <td width="150">
+			
+            <strong>Horario</strong>
+
+        </td>
+        <td width="100">
+            <strong>disponibilidad</strong>
+
+        </td>
+                <td width="200">
+            <strong>Comentario</strong>
+
+        </td>
+    </tr>
+	<tr class="blanco" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">7<span class="chica">:00</span> - 8<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+    </tr>
+	<tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">8<span class="chica">:00</span> - 9<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+          <tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">9<span class="chica">:00</span> - 10<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+          <tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">10<span class="chica">:00</span> - 11<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+          <tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">11<span class="chica">:00</span> - 12<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+          <tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">12<span class="chica">:00</span> - 13<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+          <tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">13<span class="chica">:00</span> - 14<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+          <tr class="gris" onmouseover="if (typeof(this.style) != 'undefined') this.style.backgroundColor = '#ffffcc'" onmouseout="if (typeof(this.style) != 'undefined') this.style.backgroundColor = ''">
+            <td><div align="center">14<span class="chica">:00</span> - 15<span class="chica">:00 hrs</span></div></td>
+            <td>
+				<div align="center">
+					<span style="color:#CCCCCC; ">-</span>				</div>
+			</td>
+            <td><div align="center">&nbsp;</div></td>
+          </tr>
+
+    </thead>
+    <tbody class="tbody" >
+    </tbody> 
 </div>
