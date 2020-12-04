@@ -1,7 +1,7 @@
 {
   "name": "app-completa-fazt",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portal para solicitud de Laboratorios de la Universidad de Sonora.",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src"
@@ -12,11 +12,15 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
+    "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-mysql-session": "^2.1.4",
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
+    "mongoose": "^5.11.3",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "passport": "^0.4.1",
@@ -25,5 +29,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillermovc/Portal-Laboratorios.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guillermovc/Portal-Laboratorios/issues"
+  },
+  "homepage": "https://github.com/guillermovc/Portal-Laboratorios#readme"
 }
