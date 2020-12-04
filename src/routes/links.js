@@ -37,21 +37,6 @@ router.get('/delete/:id', isLoggedIn, async (req, res) => {
     res.redirect('/links');
 });
 
-router.get('/edit/:id', isLoggedIn, async (req, res) => {
-    const { id } = req.params; // Obtiene el atributo id de params
-    const links = await pool.query('SELECT * FROM links WHERE id = ?', [id]);
-    res.render('links/edit', {link: links[0]});
-});
 
-router.post('/edit/:id', isLoggedIn, async (req, res) => {
-    const { id } = req.params;
-    const { title, description, url } = req.body;
-    const newLink = {
-        title, description, url
-    };
-    await pool.query('UPDATE links SET ? WHERE id = ?', [newLink, id]);
-    req.flash('success', 'Link Updated Successfully');
-    res.redirect('/links');
-});
 
 module.exports = router;

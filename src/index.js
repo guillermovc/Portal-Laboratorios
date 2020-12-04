@@ -55,7 +55,7 @@ app.use((req, res, next) => {
 // Routes
 app.use(require('./routes/'));  // Toma el archivo index.js por default de la carpeta routes
 app.use(require('./routes/authentication')); 
-app.use('/solicitudes', require('./routes/links')); // que siempre le preceda links
+app.use('/links', require('./routes/links')); // que siempre le preceda links
 
 // Public
 app.use(express.static(path.join(__dirname, 'public')));

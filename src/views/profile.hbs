@@ -10,10 +10,79 @@
     </div>
 </div> --}}
 
+{{!--
 <div class="container">
     <h1>Página del perfil del usuario</h1>
     <p>(PARTE DEL ANDREW)</p>
     <p>Consulta el archivo list.hbs en la carpeta views/links/list.hbs</p>
     <p>Ahi se consultan datos del usuario y se listan</p>
     <p>En routes/links.js se hace una consulta para obtener datos del usuario</p>
+</div>
+</div> --}}
+
+<style>
+* { box-sizing: border-box; }
+
+.container { 
+  display: flex; 
+  flex-flow: row wrap;
+}
+
+.card-wrap {
+  flex: 0 0 50%;
+  display: flex;
+  padding: 10px; /* gutter width */
+}
+
+.card {
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+  flex: 0 0 200%;
+}
+
+</style>
+
+<div class = "container p-4">
+    <div class="card-wrap">
+        <div class="card">
+                <div class="card-header">Informacion personal</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h6>Nombre completo: </h6>
+                            <p>{{user.fullname}}</p>
+                        </div>
+                        <div class="w-20"></div>
+                        <div class="col">
+                            <h6>Año de nacimiento: </h6>
+                            <p>{{user.birthday}}</p>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <h6>Correo electronico: </h6>
+                            <p>{{user.email}}</p>
+                        </div>
+                        <div class="w-20"></div>
+                        <div class="col">
+                            <h6>Correo electronico alterno: </h6>
+                            <p>{{user.alt_email}}</p>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <h6>Telefono celular: </h6>
+                            <p>{{user.cellphone}}</p>
+                        </div>
+                        <div class="w-20"></div>
+                        <div class="col">
+                            <h6>Enfermedades: </h6>
+                            <p>{{user.diseases}}</p>
+                        </div>
+                        <div class="w-100"></div>
+                        <br>
+                        <div class="col">
+                            <a href="/edit/{{user.id}}" class="btn btn-primary">Actualizar perfil</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 </div>
