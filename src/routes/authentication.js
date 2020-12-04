@@ -17,10 +17,40 @@ router.post('/registro', isNotLoggedIn, passport.authenticate('local-signup', {
     failureFlash: true
 }));
 
+router.get('/principal', isLoggedIn, async (req, res) => {
+    const requests = await pool.query('SELECT * FROM requests');
 
-router.post('/solicitud', isLoggedIn, (req, res) => {
-    const { datetimepicker } = req.params;
+    res.render('principal', {title: 'Portal de Laboratorios - Página Principal', 
+                header: 'Página principal',
+                requests});
+});
+
+router.post('/solicitud', isLoggedIn, async (req, res) => {
+    console.log('body: ', req.body);
+    var { datetimepicker } = req.body;
     console.log('fecha y hora: ', datetimepicker);
+
+    const year = datetimepicker.substring(0, 4);
+    const month = datetimepicker.substring(5, 7);
+    const day = datetimepicker.substring(8,10);
+    const hour = datetimepicker.substring(11, 13);
+    const lab_code = 'CODIGO';
+    const comments = 'Laboratorio solicitado por: ' + req.user.fullname;
+    const user_id = req.user.id;
+    const request_date = year + "-" + month + "-" + day + " " + hour + ":00:00";
+
+    const newRequest = {
+        user_id,
+        request_date,
+        lab_code,
+        comments
+    };
+
+    console.log('solicitud: ', newRequest);
+    const result = await pool.query("INSERT INTO requests SET ?", [newRequest]);
+    const solicitudes = await pool.query("SELECT * FROM requests");
+    console.log("Solicitudes: ", solicitudes);
+
     res.redirect("/principal");
 });
 
@@ -40,12 +70,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile', {title: 'Portal de Laboratorios - Perfil de Usuario',header: 'Perfil de Usuario'});
 });
 
-router.get('/principal', isLoggedIn, async (req, res) => {
-    const requests = await pool.query('SELECT * FROM requests');
-    console.log('objeto: ', requests);
 
-    res.render('principal', {title: 'Portal de Laboratorios - Página Principal', header: 'Página principal'});
-});
 
 router.get('/logout', isLoggedIn, (req, res) => {
     req.logOut();
